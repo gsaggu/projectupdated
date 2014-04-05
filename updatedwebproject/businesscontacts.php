@@ -11,6 +11,9 @@
 			echo "failed to connect";
 		}
 ?>
+
+
+					
 <html>
 	<head>
 	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  <!--This is a link to jquery-->
@@ -21,7 +24,7 @@
       
 	  <body background="images/background.gif">
             	<img class="logo"  src="images/logo.gif">  <!--This is a my company logo-->
-	<div id="container">
+	  <div id="container">
     	
 		
 		<header>     <!--This is a header which include nav bar-->
@@ -36,33 +39,42 @@
                 </ul><br>
 	    </header>
 		<section>
-		    <?php
-							if(isset($_GET["prop_id"]))
+		    		
+						
+			<h1>Business Contact List</h1>
+			  <p id= "logoutbutton">
+			    <a href="contacts.php?login=false">logout</a>
+			  </p>
+			    <ul class="contactnames">
+						<li><h4><a href="businesscontacts.php?id=1 ">Bill Gates</a></h4></li>
+						<li><h4><a href="businesscontacts.php?id=2 ">Carlos Slim</a></h4></li>
+						<li><h4><a href="businesscontacts.php?id=3 ">Mukesh Ambani</a></h4></li>
+				</ul>
+				<?php
+							if(isset($_GET["id"]))
 							{
-							
-								$id = $_GET['prop_id']  ;
-								$query1="SELECT * FROM business contacts where id='$id'";
-								$result=$db->query($query1); 
-                                foreach($result as $row)
-								$image=$row["image"];
-								$path="images/";
-								$imageurl=$path.$image;
-								echo $row['name']."</br>";
-								echo $row['address']."</br>";
-								echo $row['contactno']."</br>";
-								echo $row['email']."</br>";
-								echo $row['contact_no']."</br>";
-			?>				
-			
-								<img id="photo" src="<?php  echo $imageurl?>">
-				            }
-			<h3>Business Contact List</h3><h1><a href="Business_Contacts_Link.php">Logout</a></h1>
-			
-			
-						<h4><a href="Business_contacts.php?prop_id=1 ">Bill Gates</a></h4>
-						<h4><a href="Business_contacts.php?prop_id=2 ">Carlos Slim</a></h4>
-						<h4><a href="Business_contacts.php?prop_id=3 ">Mukesh Ambani</a> </h4>
-						<h4><a href="Business_contacts.php?prop_id=4 ">Warren Buffet</a> </h4>
-					
+							  
+								$id = $_GET['id']  ;
+								$query1="SELECT * FROM `business contacts` where `id` ='$id'";
+								$result= $db->query($query1); 
+                                
+								foreach ($result as $row)
+								{
+								  echo $row['name']."</br>";
+								  echo $row['address']."</br>";
+								  echo $row['contactno']."</br>";
+								  echo $row['email']."</br>";
+								  $pic=$row["image"];
+								  $path="images/";
+								  $imageurl=$path.$pic;
+								}
+								?>
+								<img id="contactspic" src="<?php  echo $imageurl?>">
+						
+			<?php
+							}
+			?> 
+		</section>
+       </div>		
 	  </body>
-</html		
+</html>		

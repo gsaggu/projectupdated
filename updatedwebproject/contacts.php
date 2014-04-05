@@ -52,7 +52,19 @@
 			echo "failed to connect";
 		}
 		
-		$_SESSION["error"]= "";
+		
+		
+		//this section of code logs out the user
+      if(isset($_GET["login"]))
+    {
+	    if($_GET["login"])
+	  {
+		$_SESSION["isloggedin"] = false;
+		$_SESSION["username"] = "";
+		/*session_destroy();*/
+		return;
+	  }
+    }
 		
 		if(isset($_POST['login']))
 		{
@@ -80,7 +92,6 @@
 			else{
 				$_SESSION["isloggedin"] = false;
 				
-				$_SESSION["username"] = "guest";
 		
 				$_SESSION["error"]= "password incorrect";			 
 
