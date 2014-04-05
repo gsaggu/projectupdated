@@ -1,0 +1,294 @@
+.logo                                                               /*properties on logo*/
+{
+margin-left:80px;
+height:150px;
+  
+} 
+
+#container                                                      /*a div tag which specifies the area 
+                                      to be c0vered of all the pages  */
+{
+width:75%;
+display:block;
+margin:auto;
+margin-top:30px;    
+}
+
+header                                                                     /*a div which includes nav bar*/
+{	
+margin-left:5%;
+margin-right:5%;	
+}
+
+#home1                                                                          
+{background-color:#B45F04;}
+#aboutme
+{background-color:#B45F04;}                      /*background colors given to specify 
+                                                    that we are on specific page*/
+#services
+{background-color:#B45F04;}
+#projects
+{background-color:#B45F04;}
+#contactme
+{background-color:#B45F04;}
+#github1
+{background-color:#B45F04;}
+#buttoncontacts
+{background-color:#B45F04;}
+
+#navbar                                                                          
+{
+list-style-type:none;                                /* to remove the bullets created by ul tags*/    
+}
+
+#navbar li                                                                                           /*properties on li tags under the navbar div*/
+{
+float:left;
+height: 32px;
+text-align:center;
+border: 3px solid ;
+border-radius:12px;
+border-color:#FAAC58;
+background-color: #61210B;
+}
+
+#navbar li a                                                                                       /*properties on each "a" tag of li tag*/
+{
+display:block;
+padding: 6px 8px 6px 8px;
+border-radius:10px;
+text-decoration:none;
+color:#FAAC58;	
+}
+
+section                                                                                               /*a div in each page*/
+{
+margin-top:80px;
+}
+
+h1                                                                                                       /*welcome note's font*/
+{font-style:oblique;}
+
+h2                                                                                                       /*mission statement alignment*/
+{
+text-align:left;
+}
+
+#mission                                                                                         /*summary on mission statement*/
+{
+font-size:14px;
+text-align:justify;
+}
+
+#more                                                                                                /*action button*/
+{
+text-align:right;
+}
+
+#more:hover                                                                                    /*hover on action*/
+{
+cursor: pointer;
+}
+
+#connect                                                                                          /*properties on keep connected pannel*/
+{
+padding: 12px 8px 12px 8px;
+height:320px;
+float:right;
+background-color:#61210B;
+border: 3px solid ;
+border-radius:16px;
+border-color:#FAAC58;
+}
+
+#connect img {                                        /*properties on images used in keep connected pannel*/
+width: 80px;
+height: 80px;
+display: block;
+}
+
+h3                                                                                                       /*font of headings for projects changed */
+{
+font-style:oblique;
+}
+
+.slides                                                                                             /*properties on whole section of featured slider*/
+{
+text-align:left;
+width: 549px;
+height: 330px;
+display: block;
+position: relative;
+}
+
+.slides input { display: none; }                          /*display of slider set to none*/
+
+.slide-container { display: block; }                    /*each slide-container class's display in blocks*/
+
+.slide 
+{
+opacity: 0;
+width: 609px;
+height: 420px;                                          /*properties on the links and images on the slider*/
+display: block;
+position: absolute;
+transform: scale(0);
+transition: all .7s ease-in-out;
+}
+
+.slide img 
+{
+width: 90%;                                              /*dimensions of each image n slider set to be fixed*/
+height: 80%;
+}
+
+.nav label 
+{
+width: 150px;
+height: 340px;
+display: none;
+position: absolute;
+opacity: 0;
+z-index: 9;                                              /*properties used on previous-next symbols to change the pictures*/
+cursor: pointer;
+transition: opacity.2s;
+color: #FFF;
+font-size: 50pt;
+text-align: center;
+line-height: 320px;
+background-color: rgba(255, 255, 255, .3);
+text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.nav .next                                                                                             /*symbol for next set to right of widht of ".nav label" */
+{ right: 0; }
+
+.slide:hover + .nav label                                                                    /*hover on both slider and symbols*/
+{ opacity: 0.5; }
+
+.nav label:hover                                                                                    /*hover on only symbols*/
+{ opacity: 1; }
+
+input:checked + .slide-container  .slide                                      /*matches every checked input and assign properties to it */
+{
+opacity: 1;
+transform: scale(1);
+transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }          /*matches every checked input alonwith symbols and dispay in block*/
+
+.nav-dots                                                                                                                       /*properties on radio buttons */
+{
+width: 100%;
+bottom: 9px;
+height: 11px;
+display: block;
+position: absolute;
+text-align: center;
+}
+
+.nav-dots .nav-dot 
+{
+top: -5px;
+width: 11px;
+height: 11px;                                                         /*properties on dots label*/
+margin: 0 4px;
+position: relative;
+border-radius: 100%;
+display: inline-block;
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover                                                                                             
+{
+cursor: pointer;                                                       /*hover on radio buttons*/
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,                        
+input#img-3:checked ~ .nav-dots label#img-dot-3,                           /*matches every checked input alonwith radio buttons*/
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+
+
+#resume
+{
+text-align:left;                                                       /*resume aligned at left*/
+}
+
+#pic 
+{
+margin-top:100px;
+width:320px;
+padding: 12px 8px 12px 8px;
+height:320px;                                                          /*properties on picture on resume page*/
+float:right;
+background-color:#61210B;
+border: 3px solid ;
+border-radius:16px;
+border-color:#FAAC58;
+}
+
+footer
+{
+margin-top:80px;                                                        /*footer properties*/
+text-align:center;
+}
+
+.project
+{
+padding: 12px 8px 12px 8px;                                             /*properties on div which includes link to projects */
+background-color:#61210B;
+border: 3px solid ;
+border-radius:16px;
+border-color:#FAAC58;
+}
+
+.project img
+ {                                                                      /*snapshots of projects*/
+width: 300px;
+height: 300px;
+display:inline;   
+}
+
+#programmer{float:right;                                                /*div which includes description of programming*/
+text-align:justify;}
+#programmer img
+{
+padding: 0px 12px 12px 12px;
+float:left;                                                              /*properties on image programming*/
+width: 150px;
+height: 150px;
+}
+
+#webdeveloper{float:right;                                               /*div which includes description of web design*/
+text-align:justify;}
+#webdeveloper img
+{
+padding: 0px 12px 12px 12px;
+float:left;                                                               /*properties on image web developer*/
+width: 150px;
+height: 150px;
+	
+}
+
+#softwaretester{float:right;                                              /*div which includes description of software tester*/
+text-align:justify;}
+#softwaretester img
+{
+padding: 0px 12px 12px 12px;
+float:left;                                                               /*properties on image of software tester*/
+width: 150px;
+height: 150px;
+}
+
+#login
+{
+border: 3px solid ;
+border-radius:12px;
+border-color:#FAAC58;
+background-color: #61210B;
+color:#FAAC58;
+}
