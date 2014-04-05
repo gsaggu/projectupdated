@@ -1,3 +1,16 @@
+<?php
+        session_start();
+		$dsn= 'mysql:host=localhost;dbname=test';
+		$username = 'root';
+		$password= '';
+		
+		try{
+		$db= new PDO($dsn, $username, $password);
+		}
+		catch(PDOException $exception){
+			echo "failed to connect";
+		}
+?>
 <html>
 	<head>
 	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>  <!--This is a link to jquery-->
@@ -22,5 +35,34 @@
 					<li><a  id="buttoncontacts" href="contacts.php">BUSINESS CONTACTS</a></li>
                 </ul><br>
 	    </header>
+		<section>
+		    <?php
+							if(isset($_GET["prop_id"]))
+							{
+							
+								$id = $_GET['prop_id']  ;
+								$query1="SELECT * FROM business contacts where id='$id'";
+								$result=$db->query($query1); 
+                                foreach($result as $row)
+								$image=$row["image"];
+								$path="images/";
+								$imageurl=$path.$image;
+								echo $row['name']."</br>";
+								echo $row['address']."</br>";
+								echo $row['contactno']."</br>";
+								echo $row['email']."</br>";
+								echo $row['contact_no']."</br>";
+			?>				
+			
+								<img id="photo" src="<?php  echo $imageurl?>">
+				            }
+			<h3>Business Contact List</h3><h1><a href="Business_Contacts_Link.php">Logout</a></h1>
+			
+			
+						<h4><a href="Business_contacts.php?prop_id=1 ">Bill Gates</a></h4>
+						<h4><a href="Business_contacts.php?prop_id=2 ">Carlos Slim</a></h4>
+						<h4><a href="Business_contacts.php?prop_id=3 ">Mukesh Ambani</a> </h4>
+						<h4><a href="Business_contacts.php?prop_id=4 ">Warren Buffet</a> </h4>
+					
 	  </body>
 </html		
