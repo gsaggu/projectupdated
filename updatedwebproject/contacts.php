@@ -19,7 +19,7 @@
                     <li><a  href="projects.html">PROJECTS</a></li>
                     <li><a  href="services.html">SERVICES</a></li>
 					<li><a  href="contactme.html">CONTACT ME</a></li>
-					<li><a  href="github.html">GIT HUB</a></li>
+					<li><a  href="https://github.com/gsaggu/projectupdated/tree/master/updatedwebproject">GIT HUB</a></li>
 					<li><a  id="buttoncontacts" href="contacts.php">BUSINESS CONTACTS</a></li>
                 </ul><br>
 	    </header>
