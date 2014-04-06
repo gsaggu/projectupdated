@@ -1,10 +1,15 @@
+<!-------------------------------  Author: Gurneet Saggu
+                                   File: businesscontacts.php
+                                   only authenticated user can access the infornmation fetched from database
+                                   php File------------------------------------>
+
 <?php
         session_start();
 		$dsn= 'mysql:host=localhost;dbname=test';
 		$username = 'root';
 		$password= '';
 		
-		try{
+		try{                                                                   //connection to database 
 		$db= new PDO($dsn, $username, $password);
 		}
 		catch(PDOException $exception){
@@ -27,7 +32,7 @@
 	  <div id="container">
     	
 		
-		<header>     <!--This is a header which include nav bar-->
+		<header>                                            <!--This is a header which include nav bar-->
                 <ul id="navbar">
                 	<li><a  href="home.html">HOME</a></li>
                     <li><a  href="aboutme.html">ABOUT ME</a></li>
@@ -39,37 +44,40 @@
                 </ul><br>
 	    </header>
 		<section>
-		    		
-						
-			<h1>Business Contact List</h1>
-			  <p id= "logoutbutton">
-			    <a href="contacts.php?login=false">logout</a>
+			  <p id= "logout">
+			    <a href="contacts.php?login=false">logout</a>                               <!--This is a link to logout from session-->
 			  </p>
+			  
+			  <h1>Business Contact List</h1>
+			  
 			    <ul class="contactnames">
-						<li><h4><a href="businesscontacts.php?id=1 ">Bill Gates</a></h4></li>
-						<li><h4><a href="businesscontacts.php?id=2 ">Carlos Slim</a></h4></li>
-						<li><h4><a href="businesscontacts.php?id=3 ">Mukesh Ambani</a></h4></li>
+						<li><h2><a href="businesscontacts.php?id=1 ">Bill Gates</a></h2></li>
+						<li><h2><a href="businesscontacts.php?id=2 ">Carlos Slim</a></h2></li>         <!--These are the businees contacts of admin-->
+						<li><h2><a href="businesscontacts.php?id=3 ">Mukesh Ambani</a></h2></li>
 				</ul>
+				   <div id ="dbinfo">
+				   
 				<?php
 							if(isset($_GET["id"]))
 							{
 							  
 								$id = $_GET['id']  ;
-								$query1="SELECT * FROM `business contacts` where `id` ='$id'";
+								$query1="SELECT * FROM `business contacts` where `id` ='$id'";     //query to get "id" of a particular contact
 								$result= $db->query($query1); 
                                 
 								foreach ($result as $row)
 								{
 								  echo $row['name']."</br>";
 								  echo $row['address']."</br>";
-								  echo $row['contactno']."</br>";
+								  echo $row['contactno']."</br>";                         //displays the infornmation fetched from business contacts table
 								  echo $row['email']."</br>";
 								  $pic=$row["image"];
 								  $path="images/";
 								  $imageurl=$path.$pic;
 								}
 								?>
-								<img id="contactspic" src="<?php  echo $imageurl?>">
+					</div>			
+								<img id="contactpic" src="<?php  echo $imageurl?>">        <!-----displays the image of specified person from database-->
 						
 			<?php
 							}

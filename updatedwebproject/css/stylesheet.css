@@ -1,3 +1,9 @@
+/*---------------------------------Author: Gurneet Saggu
+                                   File: stylesheet.css
+                                   css file applying different attributes on the site content
+                                   css File-----------------------------------*/
+								   
+								   
 .logo                                                               /*properties on logo*/
 {
 margin-left:80px;
@@ -16,8 +22,8 @@ margin-top:30px;
 
 header                                                                     /*a div which includes nav bar*/
 {	
-margin-left:5%;
-margin-right:5%;	
+margin-left:7%;
+margin-right:7%;	
 }
 
 #home1                                                                          
@@ -287,8 +293,45 @@ height: 150px;
 #login
 {
 border: 3px solid ;
-border-radius:12px;
+border-radius:12px;                                                       /*properties on login button*/
 border-color:#FAAC58;
 background-color: #61210B;
 color:#FAAC58;
+}
+
+#logout a
+{
+text-decoration:none;                                                       /* properties on logout link on businesscontacs.php*/
+color: #000000;
+float:right;
+font-size:22px;
+}
+
+.contactnames                                                                          
+{
+list-style-type:none;                                                           /* to remove the bullets created by ul tags*/    
+}
+.contactnames li a                                                                        
+{
+text-decoration:none;                                                           /* to remove the underlined links */
+color: #61210B;
+}
+
+#contactpic
+{
+width:320px;
+padding: 12px 8px 12px 8px;
+height:320px;                                                                /*properties on pictures fetched from database*/
+float:right;
+background-color:#61210B;
+border: 3px solid ;
+border-radius:16px;
+border-color:#FAAC58;
+}
+
+#dbinfo
+{
+margin-top:150px;
+float:left;                                                                   /*div tag used to display fetched infonmation */
+font-size:22px;
 }
